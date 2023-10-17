@@ -5,6 +5,25 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    component: function () {
+      return import('../views/MainViev.vue')
+    }
+  },
+  {
+    path: '/Projects',
+    name: 'Projects',
+    component: function () {
+      return import('../views/Projects.vue')
+    }
+  },
+  {
+    path: '/2',
+    name: 'home2',
+    component: HomeView
+  },
+  {
+    path: '/3',
+    name: 'home1',
     component: HomeView
   },
   {
@@ -15,6 +34,16 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    }
+  },
+  {
+    path: '/Projects/numia',
+    name: 'numia',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/pages/NumiaPage.vue')
     }
   }
 ]
